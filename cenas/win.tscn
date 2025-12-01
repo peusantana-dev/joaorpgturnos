@@ -1,0 +1,94 @@
+[gd_scene load_steps=6 format=3 uid="uid://cr18wmbohl62q"]
+
+[ext_resource type="Script" uid="uid://ba76qrgp3nfua" path="res://cenas/win.gd" id="1_70b3j"]
+[ext_resource type="FontFile" uid="uid://cyo0n5n7i26cg" path="res://Txt/thaleah_fat.ttf" id="1_aksl3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_70b3j"]
+font = ExtResource("1_aksl3")
+font_size = 250
+font_color = Color(0.8064167, 0.6078929, 3.85046e-07, 1)
+outline_size = 20
+outline_color = Color(0.29088464, 0.24766105, 0.023639418, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uyqhp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xftl7"]
+
+[node name="Win" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_70b3j")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.5
+offset_top = -81.0
+offset_right = 215.5
+offset_bottom = 81.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 4
+
+[node name="ProximaFase" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "WIN"
+label_settings = SubResource("LabelSettings_70b3j")
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 26
+theme_override_styles/separator = SubResource("StyleBoxEmpty_uyqhp")
+
+[node name="Next_B" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.8745098, 0, 0.8745098, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/h_separation = 5
+theme_override_constants/icon_max_width = 5
+theme_override_constants/align_to_largest_stylebox = 5
+theme_override_constants/line_spacing = 5
+theme_override_fonts/font = ExtResource("1_aksl3")
+theme_override_font_sizes/font_size = 30
+text = "Next "
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xftl7")
+
+[node name="Quit_B" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.9490196, 0, 0.9490196, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/h_separation = 5
+theme_override_constants/icon_max_width = 5
+theme_override_constants/align_to_largest_stylebox = 5
+theme_override_constants/line_spacing = 5
+theme_override_fonts/font = ExtResource("1_aksl3")
+theme_override_font_sizes/font_size = 30
+text = "Quit Game"
+
+[connection signal="pressed" from="VBoxContainer/Next_B" to="." method="_on_next_b_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit_B" to="." method="_on_quit_b_pressed"]

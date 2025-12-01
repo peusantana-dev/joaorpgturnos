@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdnlbiu1jqnxq"]
+
+[ext_resource type="Script" uid="uid://r8sdoqv47gpp" path="res://Personagem/mundo.gd" id="1_pc8ap"]
+[ext_resource type="Texture2D" uid="uid://b41rc5itw60lt" path="res://assets/tile/terrain/833986ad53d4c1e5bbc6792311c63952.jpg" id="2_svl8i"]
+[ext_resource type="PackedScene" uid="uid://c6wry8p167rvk" path="res://Personagem/personagem.tscn" id="3_vyjux"]
+[ext_resource type="Resource" uid="uid://l317cfwfdvnw" path="res://Data/jogador/guerreiro.tres" id="4_7madm"]
+[ext_resource type="Resource" uid="uid://ud7225be5hem" path="res://Data/inimigos/GuerreiroInimigo.tres" id="5_vbmw3"]
+
+[node name="mundo" type="Node2D"]
+script = ExtResource("1_pc8ap")
+
+[node name="Fundo" type="Sprite2D" parent="."]
+position = Vector2(577, 325)
+scale = Vector2(0.9625001, 0.9614815)
+texture = ExtResource("2_svl8i")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 325)
+
+[node name="Personagem1" parent="." instance=ExtResource("3_vyjux")]
+position = Vector2(278, 267)
+Data = ExtResource("4_7madm")
+
+[node name="Personagem2" parent="." instance=ExtResource("3_vyjux")]
+position = Vector2(266, 471)
+Data = ExtResource("4_7madm")
+
+[node name="Personagem3" parent="." instance=ExtResource("3_vyjux")]
+position = Vector2(377, 374)
+Data = ExtResource("4_7madm")
+
+[node name="Inimigo1" parent="." instance=ExtResource("3_vyjux")]
+position = Vector2(878, 299)
+Data = ExtResource("5_vbmw3")
+
+[node name="Saude" parent="Inimigo1" index="5"]
+self_modulate = Color(18.892157, 0, 0, 1)
+
+[node name="Inimigo2" parent="." instance=ExtResource("3_vyjux")]
+modulate = Color(1, 1, 1, 0.9843137)
+position = Vector2(778, 379)
+Data = ExtResource("5_vbmw3")
+
+[node name="Saude" parent="Inimigo2" index="5"]
+modulate = Color(1, 0, 0, 1)
+
+[node name="Inimigo3" parent="." instance=ExtResource("3_vyjux")]
+position = Vector2(895, 471)
+Data = ExtResource("5_vbmw3")
+
+[node name="Saude" parent="Inimigo3" index="5"]
+modulate = Color(1, 0, 0, 1)
+
+[node name="IniciarMundo" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 459.5
+offset_top = 122.5
+offset_right = 638.5
+offset_bottom = 150.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 20
+text = "TURNO: JOGADOR "
+
+[connection signal="timeout" from="IniciarMundo" to="." method="_on_iniciar_mundo_timeout"]
+
+[editable path="Inimigo1"]
+[editable path="Inimigo2"]
+[editable path="Inimigo3"]
