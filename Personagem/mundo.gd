@@ -1,6 +1,9 @@
 extends Node2D
 
-
+func _process(delta):
+	if Input.is_action_just_pressed("trocar_cena"):
+		get_tree().change_scene_to_file("res://cenas/esc.tscn")	
+		
 func _ready(): #sempre que o manager alternar o turno, essa função vai ser chamada automaticamente
 	await get_tree().process_frame  #espera 1 frame pra garantir que tudo carregou
 	Manager.obter_personagens()   #faz o manager procurar novos personagens assim que a cena for carregada

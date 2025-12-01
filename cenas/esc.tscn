@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj7dsj0gpo0pl"]
+
+[ext_resource type="Script" uid="uid://c6xbetkpyvxn0" path="res://cenas/esc.gd" id="1_et8e4"]
+[ext_resource type="FontFile" uid="uid://cyo0n5n7i26cg" path="res://Txt/thaleah_fat.ttf" id="2_lgwn0"]
+
+[node name="esc" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_et8e4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.5
+offset_top = -81.0
+offset_right = 215.5
+offset_bottom = 81.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 4
+
+[node name="Restart b" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_lgwn0")
+theme_override_font_sizes/font_size = 30
+text = "Restart"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Quit_B" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_lgwn0")
+theme_override_font_sizes/font_size = 30
+text = "QUIT GAME"
+
+[connection signal="pressed" from="VBoxContainer/Restart b" to="." method="_on_restart_b_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit_B" to="." method="_on_quit_b_pressed"]

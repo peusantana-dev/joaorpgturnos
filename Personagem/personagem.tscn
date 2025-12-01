@@ -276,7 +276,7 @@ animations = [{
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rrkbk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gcid"]
-bg_color = Color(0.20392157, 0.20392157, 0.20392157, 0.3019608)
+bg_color = Color(1, 0, 0.05882353, 0.27450982)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jaw8t"]
 bg_color = Color(0, 0.84705883, 0.10980392, 1)
