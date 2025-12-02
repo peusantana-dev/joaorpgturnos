@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://cyo0n5n7i26cg" path="res://Txt/thaleah_fat.ttf" id="1_cwivi"]
 
 [node name="Start" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

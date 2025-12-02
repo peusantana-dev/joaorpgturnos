@@ -1,50 +1,105 @@
-[gd_scene load_steps=3 format=3 uid="uid://dj7dsj0gpo0pl"]
+[gd_scene load_steps=7 format=3 uid="uid://dj7dsj0gpo0pl"]
 
 [ext_resource type="Script" uid="uid://c6xbetkpyvxn0" path="res://cenas/esc.gd" id="1_et8e4"]
 [ext_resource type="FontFile" uid="uid://cyo0n5n7i26cg" path="res://Txt/thaleah_fat.ttf" id="2_lgwn0"]
 
-[node name="esc" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[sub_resource type="LabelSettings" id="LabelSettings_et8e4"]
+font_size = 80
+font_color = Color(0.80784315, 0.60784316, 0, 1)
+outline_size = 20
+outline_color = Color(0.2901961, 0.24705882, 0.023529412, 1)
+
+[sub_resource type="Animation" id="Animation_0r0ji"]
+resource_name = "embaçado"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_v1ajw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qk2ig"]
+_data = {
+&"RESET": SubResource("Animation_v1ajw"),
+&"embaçado": SubResource("Animation_0r0ji")
+}
+
+[node name="pause_menu" type="CanvasLayer"]
+process_mode = 3
+visible = false
 script = ExtResource("1_et8e4")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
+modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 237.0
+offset_top = 83.0
+offset_right = -205.0
+offset_bottom = -94.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0.20392157)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -215.5
-offset_top = -81.0
+offset_top = -47.0
 offset_right = 215.5
-offset_bottom = 81.0
+offset_bottom = 121.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 4
 
-[node name="Restart b" type="Button" parent="VBoxContainer"]
+[node name="continue_b" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_lgwn0")
 theme_override_font_sizes/font_size = 30
-text = "Restart"
+action_mode = 0
+text = "continue"
 
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
-modulate = Color(0, 0, 0, 1)
+[node name="Separator" type="HSeparator" parent="VBoxContainer"]
+modulate = Color(0, 0, 0, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="restart_b" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_lgwn0")
+theme_override_font_sizes/font_size = 30
+text = "RESTART"
+
+[node name="Separator2" type="HSeparator" parent="VBoxContainer"]
+modulate = Color(0, 0, 0, 0)
 layout_mode = 2
 theme_override_constants/separation = 10
 
@@ -55,5 +110,24 @@ theme_override_fonts/font = ExtResource("2_lgwn0")
 theme_override_font_sizes/font_size = 30
 text = "QUIT GAME"
 
-[connection signal="pressed" from="VBoxContainer/Restart b" to="." method="_on_restart_b_pressed"]
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -192.5
+offset_top = 126.0
+offset_right = 192.5
+offset_bottom = 200.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_lgwn0")
+text = "PAUSE GAME"
+label_settings = SubResource("LabelSettings_et8e4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_qk2ig")
+}
+
+[connection signal="pressed" from="VBoxContainer/continue_b" to="." method="_on_continue_b_pressed"]
+[connection signal="pressed" from="VBoxContainer/restart_b" to="." method="_on_restart_b_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit_B" to="." method="_on_quit_b_pressed"]

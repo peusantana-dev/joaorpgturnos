@@ -73,7 +73,7 @@ func _physics_process(delta):
 	if voltar_posicao: #faz o personagem retornar ao ponto de origem após ataque
 		var distancia = global_position.distance_to(posicao_inicial)
 #se a distância for maior que 0, o personagem ainda não chegou
-		if distancia > 1:
+		if distancia > 1.5:
 			var direcao = (posicao_inicial - global_position).normalized()  #pega a direção normalizada
 			velocity = VELOCITY * direcao
 			move_and_slide()

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bcplil78q6tqs"]
+[gd_scene load_steps=7 format=3 uid="uid://bcplil78q6tqs"]
 
 [ext_resource type="Script" uid="uid://r8sdoqv47gpp" path="res://Personagem/mundo.gd" id="1_n3ghc"]
 [ext_resource type="Texture2D" uid="uid://dr0tdktfskghr" path="res://assets/tile/terrain/0d0f0c384be14928fd4dcb6ca7f0e6b5.jpg" id="2_202ny"]
 [ext_resource type="PackedScene" uid="uid://c6wry8p167rvk" path="res://Personagem/personagem.tscn" id="3_4j3rp"]
 [ext_resource type="Resource" uid="uid://l317cfwfdvnw" path="res://Data/jogador/guerreiro.tres" id="4_73nl2"]
+[ext_resource type="PackedScene" uid="uid://dj7dsj0gpo0pl" path="res://cenas/esc.tscn" id="5_202ny"]
 [ext_resource type="Resource" uid="uid://ud7225be5hem" path="res://Data/inimigos/GuerreiroInimigo.tres" id="5_h5ym7"]
 
 [node name="mundo" type="Node2D"]
@@ -74,6 +75,8 @@ grow_vertical = 2
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 20
 text = "TURNO: JOGADOR "
+
+[node name="pause_menu" parent="." instance=ExtResource("5_202ny")]
 
 [connection signal="timeout" from="IniciarMundo" to="." method="_on_iniciar_mundo_timeout"]
 
