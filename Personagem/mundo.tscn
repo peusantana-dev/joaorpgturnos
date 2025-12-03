@@ -40,7 +40,7 @@ self_modulate = Color(18.892157, 0, 0, 1)
 
 [node name="Inimigo2" parent="." instance=ExtResource("3_vyjux")]
 modulate = Color(1, 0, 0, 0.9843137)
-position = Vector2(778, 379)
+position = Vector2(778, 378)
 Data = ExtResource("5_vbmw3")
 
 [node name="Saude" parent="Inimigo2" index="5"]
