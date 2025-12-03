@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://dj7dsj0gpo0pl" path="res://cenas/esc.tscn" id="6_p0w5r"]
 
 [node name="mundo" type="Node2D"]
-process_mode = 3
 script = ExtResource("1_pc8ap")
 
 [node name="Fundo" type="Sprite2D" parent="."]
