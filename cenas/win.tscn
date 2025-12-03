@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cr18wmbohl62q"]
 
-[ext_resource type="Script" uid="uid://ba76qrgp3nfua" path="res://cenas/win.gd" id="1_70b3j"]
+[ext_resource type="Script" uid="uid://ba76qrgp3nfua" path="res://win.gd" id="1_70b3j"]
 [ext_resource type="FontFile" uid="uid://cyo0n5n7i26cg" path="res://Txt/thaleah_fat.ttf" id="1_aksl3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_70b3j"]
@@ -15,6 +15,7 @@ outline_color = Color(0.29088464, 0.24766105, 0.023639418, 1)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xftl7"]
 
 [node name="Win" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

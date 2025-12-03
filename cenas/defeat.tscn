@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dt04a3wdoudx3"]
 
-[ext_resource type="Script" uid="uid://gjxjepf4fwe4" path="res://cenas/defeat.gd" id="1_737l5"]
+[ext_resource type="Script" uid="uid://gjxjepf4fwe4" path="res://defeat.gd" id="1_737l5"]
 [ext_resource type="FontFile" uid="uid://cyo0n5n7i26cg" path="res://Txt/thaleah_fat.ttf" id="1_p5dac"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dy7f4"]
@@ -75,6 +75,7 @@ _data = {
 }
 
 [node name="Defeat" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

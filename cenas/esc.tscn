@@ -1,10 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://dj7dsj0gpo0pl"]
+[gd_scene load_steps=9 format=3 uid="uid://dj7dsj0gpo0pl"]
 
-[ext_resource type="Script" uid="uid://c6xbetkpyvxn0" path="res://cenas/esc.gd" id="1_et8e4"]
+[ext_resource type="Script" uid="uid://c5m48nsoxs5me" path="res://esc.gd" id="1_et8e4"]
 [ext_resource type="FontFile" uid="uid://cyo0n5n7i26cg" path="res://Txt/thaleah_fat.ttf" id="2_lgwn0"]
 
+[sub_resource type="InputEventAction" id="InputEventAction_et8e4"]
+action = &"esc"
+
+[sub_resource type="Shortcut" id="Shortcut_lgwn0"]
+events = [SubResource("InputEventAction_et8e4")]
+
 [sub_resource type="LabelSettings" id="LabelSettings_et8e4"]
-font_size = 80
+font_size = 100
 font_color = Color(0.80784315, 0.60784316, 0, 1)
 outline_size = 20
 outline_color = Color(0.2901961, 0.24705882, 0.023529412, 1)
@@ -52,6 +58,7 @@ visible = false
 script = ExtResource("1_et8e4")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+process_mode = 3
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
@@ -79,11 +86,13 @@ grow_vertical = 2
 theme_override_constants/separation = 4
 
 [node name="continue_b" type="Button" parent="VBoxContainer"]
+process_mode = 3
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_lgwn0")
 theme_override_font_sizes/font_size = 30
 action_mode = 0
+shortcut = SubResource("Shortcut_lgwn0")
 text = "continue"
 
 [node name="Separator" type="HSeparator" parent="VBoxContainer"]
@@ -103,7 +112,8 @@ modulate = Color(0, 0, 0, 0)
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Quit_B" type="Button" parent="VBoxContainer"]
+[node name="quit_b" type="Button" parent="VBoxContainer"]
+process_mode = 3
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_lgwn0")
@@ -115,9 +125,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -192.5
-offset_top = 126.0
+offset_top = 146.0
 offset_right = 192.5
-offset_bottom = 200.0
+offset_bottom = 220.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_lgwn0")
 text = "PAUSE GAME"
@@ -130,4 +140,4 @@ libraries = {
 
 [connection signal="pressed" from="VBoxContainer/continue_b" to="." method="_on_continue_b_pressed"]
 [connection signal="pressed" from="VBoxContainer/restart_b" to="." method="_on_restart_b_pressed"]
-[connection signal="pressed" from="VBoxContainer/Quit_B" to="." method="_on_quit_b_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit_b" to="." method="_on_quit_b_pressed"]

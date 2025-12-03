@@ -1,7 +1,7 @@
 [gd_scene load_steps=44 format=3 uid="uid://c6wry8p167rvk"]
 
 [ext_resource type="Texture2D" uid="uid://dokgc0f80o3pk" path="res://assets/player/char_red.png" id="1_arawn"]
-[ext_resource type="Script" uid="uid://d2hrnadmckqgh" path="res://Personagem/personagem.gd" id="1_gdcj3"]
+[ext_resource type="Script" uid="uid://d2hrnadmckqgh" path="res://personagem.gd" id="1_gdcj3"]
 [ext_resource type="PackedScene" uid="uid://c2i8q5ocldky0" path="res://UI/ações.tscn" id="3_rrkbk"]
 [ext_resource type="PackedScene" uid="uid://bui3xkgoyyb4k" path="res://objetos/Componentes/componente_saude.tscn" id="4_2gcid"]
 
