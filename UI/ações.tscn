@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c2i8q5ocldky0"]
 
-[ext_resource type="Script" uid="uid://dvs5v00feyrmy" path="res://UI/Acoes.gd" id="1_16xs8"]
+[ext_resource type="Script" uid="uid://dvs5v00feyrmy" path="res://Acoes.gd" id="1_16xs8"]
 
 [node name="Ações" type="Control"]
 layout_mode = 3
