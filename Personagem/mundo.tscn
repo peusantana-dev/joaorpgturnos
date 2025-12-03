@@ -31,6 +31,7 @@ position = Vector2(377, 374)
 Data = ExtResource("4_7madm")
 
 [node name="Inimigo1" parent="." instance=ExtResource("3_vyjux")]
+modulate = Color(1, 0, 0, 1)
 position = Vector2(878, 299)
 Data = ExtResource("5_vbmw3")
 
@@ -38,7 +39,7 @@ Data = ExtResource("5_vbmw3")
 self_modulate = Color(18.892157, 0, 0, 1)
 
 [node name="Inimigo2" parent="." instance=ExtResource("3_vyjux")]
-modulate = Color(1, 1, 1, 0.9843137)
+modulate = Color(1, 0, 0, 0.9843137)
 position = Vector2(778, 379)
 Data = ExtResource("5_vbmw3")
 
@@ -46,6 +47,7 @@ Data = ExtResource("5_vbmw3")
 modulate = Color(1, 0, 0, 1)
 
 [node name="Inimigo3" parent="." instance=ExtResource("3_vyjux")]
+modulate = Color(1, 0, 0, 1)
 position = Vector2(895, 471)
 Data = ExtResource("5_vbmw3")
 
