@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5r5orpy1nwuf"]
+[gd_scene load_steps=4 format=3 uid="uid://c5r5orpy1nwuf"]
 
 [ext_resource type="Script" uid="uid://c2yqglgjs5gsa" path="res://button/button.gd" id="1_51vcp"]
 [ext_resource type="FontFile" uid="uid://cyo0n5n7i26cg" path="res://Txt/thaleah_fat.ttf" id="1_cwivi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cwivi"]
+font = ExtResource("1_cwivi")
+font_size = 130
+font_color = Color(0.80784315, 0.60784316, 0, 1)
+outline_size = 20
+outline_color = Color(0.2901961, 0.24705882, 0.023529412, 1)
 
 [node name="Start" type="Control"]
 process_mode = 3
@@ -29,10 +36,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 4.0
-offset_bottom = 4.0
+offset_left = -200.0
+offset_top = -51.0
+offset_right = 200.0
+offset_bottom = 149.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.80784315, 0.60784316, 0, 1)
@@ -47,5 +54,18 @@ theme_override_fonts/font = ExtResource("1_cwivi")
 theme_override_font_sizes/font_size = 100
 text = "START"
 script = ExtResource("1_51vcp")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -272.0
+offset_top = 64.0
+offset_right = 272.0
+offset_bottom = 184.0
+grow_horizontal = 2
+text = "BEM VINDO!"
+label_settings = SubResource("LabelSettings_cwivi")
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
